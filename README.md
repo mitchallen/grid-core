@@ -79,9 +79,9 @@ An example similar to this exists on the __examples__ folder out on the repo.
         <meta name="description" content="Grid Core Example">
         <!-- either cdn should work -->
         <!--
-        <script src="https://cdn.rawgit.com/mitchallen/grid-core/v0.1.3/dist/grid-core.min.js"></script>
+        <script src="https://cdn.rawgit.com/mitchallen/grid-core/v0.1.5/dist/grid-core.min.js"></script>
         -->
-        <script src="https://unpkg.com/@mitchallen/grid-core@0.1.3/dist/grid-core.min.js"></script>
+        <script src="https://unpkg.com/@mitchallen/grid-core@0.1.5/dist/grid-core.min.js"></script>
         <script>
           var factory = window.MitchAllen.GridCore;
           console.log(factory);
@@ -247,6 +247,10 @@ Add unit tests for any new or changed functionality. Lint and test your code.
 * * *
 
 ## Version History
+
+#### Version 0.1.5
+
+* removed unused dependency
 
 #### Version 0.1.4
 
