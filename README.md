@@ -1,7 +1,7 @@
 
 @mitchallen/grid-core
 ==
-PUT DESCRIPTION HERE
+Grid core
 --
 * * *
 ## Installation
@@ -14,6 +14,33 @@ You must use __npm__ __2.7.0__ or higher because of the scoped package name.
 * * *
 
 ## Usage
+
+    "use strict";
+    var gridFactory = require("@mitchallen/grid-core");
+    
+    var rows = 5;;
+    
+    var grid = gridFactory.create( { rows: rows } );
+    
+	if(!grid) {
+    	console.error("couldn't create grid");
+	}
+    
+    if(! grid.isCell( i, j ) ) {
+    	console.error("parameters not within grid");
+    }
+    
+    if(! grid.set( i, j, value )) {
+    	console.error("couldn't set grid value");
+    }
+    
+    let result = grid.get( i, j );
+    
+    if(! result) {
+    	console.error("couldn't get grid value");
+    } else {
+    	console.log("grid value: ", result );
+    }
 
 ## Testing
 
