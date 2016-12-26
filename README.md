@@ -18,7 +18,7 @@ You must use __npm__ __2.7.0__ or higher because of the scoped package name.
     "use strict";
     var gridFactory = require("@mitchallen/grid-core");
     
-    var rows = 5;;
+    var rows = 5;
     
     var grid = gridFactory.create( { rows: rows } );
     
@@ -65,6 +65,10 @@ Add unit tests for any new or changed functionality. Lint and test your code.
 * * *
 
 ## Version History
+
+#### Version 0.1.1 
+
+* removed obsolete file
 
 #### Version 0.1.0 
 

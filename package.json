@@ -5,7 +5,7 @@
   "main": "dist/grid-core.js",
   "scripts": {
     "//": "To use: npm start (useful if not a module)",
-    "start": "node index.js",
+    "start": "node dist/grid-core.js",
     "//": "To use: npm test (assumes mocha installed globally)",
     "test": "grunt && /usr/local/bin/mocha --recursive --timeout 20000",
     "//": "To use: npm run test-nodemon (assumes global location of mocha)",
