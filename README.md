@@ -42,6 +42,11 @@ You must use __npm__ __2.7.0__ or higher because of the scoped package name.
     	console.log("grid value: ", result );
     }
 
+## Browser Usage
+
+    var core = window.MitchAllen.GridCore;
+    var grid = core.create( { rows: 5 } );
+
 ## Testing
 
 To test, go to the root folder and type (sans __$__):
@@ -65,6 +70,11 @@ Add unit tests for any new or changed functionality. Lint and test your code.
 * * *
 
 ## Version History
+
+#### Version 0.1.2 
+
+* fixed browserify standalone setting
+* used __window.MitchAllen.GridCore__ to access from the browser
 
 #### Version 0.1.1 
 
