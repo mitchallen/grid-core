@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Grid Core Example</title>
+    <meta name="description" content="Grid Core Example">
+    <!-- either cdn should work -->
+    <!--
+    <script src="https://cdn.rawgit.com/mitchallen/grid-core/v0.1.3/dist/grid-core.min.js"></script>
+    -->
+    <script src="https://unpkg.com/@mitchallen/grid-core@0.1.3/dist/grid-core.min.js"></script>
+    <script>
+      var factory = window.MitchAllen.GridCore;
+      console.log(factory);
+      var rows = 5;
+      var gc = factory.create( { rows: rows } );
+      gc.set(rows-1,6,"alpha");
+      console.log(gc);
+      gc.log(); 
+    </script>
+  </head>
+  <body>
+    <h1>Grid Core Example</h1>
+    <p>See JavaScript developer console for output.</p>
+  </body>
+</html>

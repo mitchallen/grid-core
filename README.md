@@ -15,32 +15,59 @@ You must use __npm__ __2.7.0__ or higher because of the scoped package name.
 
 ## Usage
 
+Create a new folder and do the following at the command line:
+
+    $ npm init
+    $ npm install @mitchallen/grid-core --save
+
+In the same folder create a file called __index.js__ with the content below:
+
     "use strict";
+
     var gridFactory = require("@mitchallen/grid-core");
-    
+
     var rows = 5;
-    
+
     var grid = gridFactory.create( { rows: rows } );
-    
-	if(!grid) {
-    	console.error("couldn't create grid");
-	}
-    
-    if(! grid.isCell( i, j ) ) {
-    	console.error("parameters not within grid");
+
+    if(!grid) {
+        console.error("couldn't create grid");
     }
-    
+
+    var i = rows - 1,
+        j = 3,
+        value = 999;
+
     if(! grid.set( i, j, value )) {
-    	console.error("couldn't set grid value");
+        console.error("couldn't set grid value");
     }
-    
+
+    grid.log();
+
+    if(! grid.isCell( i, j ) ) {
+        console.error("parameters not within grid");
+    }
+
     let result = grid.get( i, j );
-    
+
     if(! result) {
-    	console.error("couldn't get grid value");
+        console.error("couldn't get grid value");
     } else {
-    	console.log("grid value: ", result );
+        console.log("grid value: ", result );
     }
+    
+At the command line, execute the following:
+
+    $ node index.js
+    
+Output:
+
+    size: 5: 
+    [ [], [], [], [], [ , , , 999 ] ]
+    grid value:  999
+  
+An example similar to this exists on the __examples__ folder out on the repo.
+
 
 ## Browser Usage
 
