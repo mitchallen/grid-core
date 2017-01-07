@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for dist/grid-core.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">dist/</a> grid-core.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">65.71% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>46/70</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">46.15% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>24/52</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">92.86% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>13/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">91.43% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>32/35</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86</td><td class="line-coverage quiet"><span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">(function(f){<span class="missing-if-branch" title="else path not taken" >E</span>if(typeof exports==="object"&amp;&amp;typeof module!=="undefined"){module.exports=f()}else <span class="cstat-no" title="statement not covered" >if(typeof define==="function"&amp;&amp;define.amd){<span class="cstat-no" title="statement not covered" >define([],f)}</span>else{<span class="cstat-no" title="statement not covered" >var g;<span class="cstat-no" title="statement not covered" >i</span>f(typeof window!=="undefined"){<span class="cstat-no" title="statement not covered" >g=window}</span>else <span class="cstat-no" title="statement not covered" >if(typeof global!=="undefined"){<span class="cstat-no" title="statement not covered" >g=global}</span>else <span class="cstat-no" title="statement not covered" >if(typeof self!=="undefined"){<span class="cstat-no" title="statement not covered" >g=self}</span>else{<span class="cstat-no" title="statement not covered" >g=this}<span class="cstat-no" title="statement not covered" ></span>(</span></span></span>g.MitchAllen || (g.MitchAllen = {})).GridCore = f()}</span>}</span>)(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){<span class="missing-if-branch" title="if path not taken" >I</span>if(!t[o]){<span class="cstat-no" title="statement not covered" >var a=typeof require=="function"&amp;&amp;require;<span class="cstat-no" title="statement not covered" >i</span>f(!u&amp;&amp;a)<span class="cstat-no" title="statement not covered" >return a(o,!0);<span class="cstat-no" title="statement not covered" >i</span></span>f(i)<span class="cstat-no" title="statement not covered" >return i(o,!0);<span class="cstat-no" title="statement not covered" >v</span></span>ar f=new Error("Cannot find module '"+o+"'");<span class="cstat-no" title="statement not covered" >t</span>hrow f.code="MODULE_NOT_FOUND",f}</span>var l=n[o]={exports:{}};t[o][0].call(l.exports,<span class="fstat-no" title="function not covered" >function(e){<span class="cstat-no" title="statement not covered" ></span>var n=t[o][1][e];<span class="cstat-no" title="statement not covered" >r</span>eturn s(n?n:e)}</span>,l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&amp;&amp;require;for(var o=0;o&lt;r.length;o++)s(r[o]);return s})({1:[function(_dereq_,module,exports){
+/**
+    Module: @mitchallen/grid-core/modules/index.js
+    Author: Mitch Allen
+*/
+&nbsp;
+/*jshint node: true */
+/*jshint esversion: 6 */
+&nbsp;
+"use strict";
+&nbsp;
+module.exports.create = function (spec) {
+&nbsp;
+    spec = spec || {};
+&nbsp;
+    var _rows = spec.rows || 0;
+&nbsp;
+    _rows = Math.max(_rows, 0);
+&nbsp;
+    var _array = [];
+    while (_array.push([]) &lt; _rows) {}
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!_array) {
+<span class="cstat-no" title="statement not covered" >        return null;</span>
+    }
+&nbsp;
+    var obj = Object.create({}, {
+        "rows": {
+            writeable: false,
+            value: _rows,
+            enumerable: true
+        }
+    });
+&nbsp;
+    return Object.assign(obj, {
+&nbsp;
+        log: function log() {
+            console.log("size: %d: ", _rows);
+            console.log(_array);
+        },
+        rowSize: function rowSize(row) {
+            <span class="missing-if-branch" title="if path not taken" >I</span>if (row &lt; 0 || row &gt;= _rows) {
+<span class="cstat-no" title="statement not covered" >                return 0;</span>
+            }
+            return _array[row].length;
+        },
+        isCell: function isCell(a, b) {
+            var rs = this.rowSize(a);
+            return a &gt;= 0 &amp;&amp; a &lt; _rows &amp;&amp; b &gt;= 0 &amp;&amp; b &lt; rs;
+        },
+        set: function set(a, b, value) {
+            // problem for sparse arrays
+            // if(!this.isCell(a,b)) { return false; }
+            <span class="missing-if-branch" title="if path not taken" >I</span>if (a &lt; 0 || b &lt; 0) <span class="cstat-no" title="statement not covered" >return false;</span>
+            _array[a][b] = value;
+            return true;
+        },
+        get: function get(a, b) {
+            <span class="missing-if-branch" title="if path not taken" >I</span>if (!this.isCell(a, b)) {
+<span class="cstat-no" title="statement not covered" >                return null;</span>
+            }
+            return _array[a][b];
+        },
+        fill: function fill(value) {
+            for (var row = 0; row &lt; _rows; row++) {
+                var rs = this.rowSize(row);
+                for (var pos = 0; pos &lt; rs; pos++) {
+                    _array[row][pos] = value;
+                }
+            }
+        },
+        cloneArray: function cloneArray() {
+            var _clone = [];
+            while (_clone.push([]) &lt; _rows) {}
+            for (var row = 0; row &lt; _rows; row++) {
+                var rs = this.rowSize(row);
+                for (var pos = 0; pos &lt; rs; pos++) {
+                    _clone[row][pos] = _array[row][pos];
+                }
+            }
+            return _clone;
+        }
+    });
+};
+&nbsp;
+},{}]},{},[1])(1)
+});</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Jan 07 2017 04:20:50 GMT-0700 (MST)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
