@@ -5,14 +5,13 @@ Grid core
 --
 
 <p align="left">
-<a href="https://npmjs.org/package/@mitchallen/grid-core">
+  <a href="https://npmjs.org/package/@mitchallen/grid-core">
     <img src="https://img.shields.io/travis/mitchallen/grid-core.svg?style=flat-square" alt="Version">
-</a>
-<a href="https://npmjs.org/package/@mitchallen/grid-core">
     <img src="http://img.shields.io/npm/v/@mitchallen/grid-core.svg?style=flat-square" alt="Version">
-</a>
-<img src="https://img.shields.io/github/license/mitchallen/grid-core.svg">
-</p>
+    <img src="https://codecov.io/gh/mitchallen/grid-core/branch/master/graph/badge.svg" alt="Coverage Status">
+    <img src="https://img.shields.io/github/license/mitchallen/grid-core.svg">
+  </a>
+</p> 
 
 * * *
 ## Installation
@@ -258,6 +257,12 @@ Add unit tests for any new or changed functionality. Lint and test your code.
 * * *
 
 ## Version History
+
+#### Version 0.1.6
+
+* changed license to MIT
+* integrated travis-ci and codecov.io
+* added badges to readme
 
 #### Version 0.1.5
 
