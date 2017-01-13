@@ -166,7 +166,7 @@ describe('module smoke test', function() {
         let rows = 5;
         let sizeY = 6;
         var obj = _module.create({ rows: rows });
-        obj.rowSize(rows-1).should.eql(0);
+        obj.rowSize(rows).should.eql(0);
         done();
     });
 
