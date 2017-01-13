@@ -5,10 +5,20 @@ Grid core
 --
 
 <p align="left">
-  <a href="https://npmjs.org/package/@mitchallen/grid-core">
+
+  <a href="https://travis-ci.org/mitchallen/grid-core">
     <img src="https://img.shields.io/travis/mitchallen/grid-core.svg?style=flat-square" alt="Version">
-    <img src="http://img.shields.io/npm/v/@mitchallen/grid-core.svg?style=flat-square" alt="Version">
+  </a>
+  
+  <a href="https://codecov.io/gh/mitchallen/grid-core">
     <img src="https://codecov.io/gh/mitchallen/grid-core/branch/master/graph/badge.svg" alt="Coverage Status">
+  </a>
+  
+  <a href="https://npmjs.org/package/@mitchallen/grid-core">
+    <img src="http://img.shields.io/npm/v/@mitchallen/grid-core.svg?style=flat-square" alt="Version">
+  </a>
+  
+  <a href="https://npmjs.org/package/@mitchallen/grid-core">
     <img src="https://img.shields.io/github/license/mitchallen/grid-core.svg">
   </a>
 </p> 
@@ -257,6 +267,10 @@ Add unit tests for any new or changed functionality. Lint and test your code.
 * * *
 
 ## Version History
+
+#### Version 0.1.7
+
+* updated badge links
 
 #### Version 0.1.6
 
