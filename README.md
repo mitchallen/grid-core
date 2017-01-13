@@ -3,6 +3,17 @@
 ==
 Grid core
 --
+
+<p align="left">
+<a href="https://npmjs.org/package/@mitchallen/grid-core">
+    <img src="https://img.shields.io/travis/mitchallen/grid-core.svg?style=flat-square" alt="Version">
+</a>
+<a href="https://npmjs.org/package/@mitchallen/grid-core">
+    <img src="http://img.shields.io/npm/v/@mitchallen/grid-core.svg?style=flat-square" alt="Version">
+</a>
+<img src="https://img.shields.io/github/license/mitchallen/grid-core.svg">
+</p>
+
 * * *
 ## Installation
 
