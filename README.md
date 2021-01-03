@@ -42,6 +42,7 @@ Create a new folder and do the following at the command line:
 
 In the same folder create a file called __index.js__ with the content below:
 
+```js
     "use strict";
 
     var gridFactory = require("@mitchallen/grid-core");
@@ -75,6 +76,7 @@ In the same folder create a file called __index.js__ with the content below:
     } else {
         console.log("grid value: ", result );
     }
+```
     
 At the command line, execute the following:
 
@@ -91,17 +93,14 @@ An example similar to this exists on the __examples__ folder out on the repo.
 
 ## Browser Usage
 
+```html
     <!DOCTYPE html>
     <html>
       <head>
         <meta charset="utf-8">
         <title>Grid Core Example</title>
         <meta name="description" content="Grid Core Example">
-        <!-- either cdn should work -->
-        <!--
-        <script src="https://cdn.rawgit.com/mitchallen/grid-core/v0.1.5/dist/grid-core.min.js"></script>
-        -->
-        <script src="https://unpkg.com/@mitchallen/grid-core@0.1.5/dist/grid-core.min.js"></script>
+        <script src="https://unpkg.com/@mitchallen/grid-core@0.1.10/dist/grid-core.min.js"></script>
         <script>
           var factory = window.MitchAllen.GridCore;
           console.log(factory);
@@ -117,6 +116,7 @@ An example similar to this exists on the __examples__ folder out on the repo.
         <p>See JavaScript developer console for output.</p>
       </body>
     </html>
+```
     
 * * *
 

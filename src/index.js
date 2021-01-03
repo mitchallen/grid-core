@@ -1,5 +1,5 @@
 /**
-    Module: @mitchallen/grid-core/modules/index.js
+    Module: @mitchallen/grid-core/src/index.js
     Author: Mitch Allen
 */
 
@@ -8,12 +8,9 @@
 
 "use strict";
 
-module.exports.create = (spec) => {
+module.exports.create = (spec = {}) => {
 
-    spec = spec || {};
-
-    let _rows = spec.rows || 0;
-
+    let { rows: _rows = 0} = spec;
     _rows = Math.max( _rows, 0 );
 
     var _array = [];
