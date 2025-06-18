@@ -8,7 +8,7 @@
 
 var request = require('supertest'),
     should = require('should'),
-    modulePath = "../dist/grid-core";
+    modulePath = "../dist/grid-core.cjs.js"; // use CJS build for tests
 
 describe('module smoke test', function() {
 
