@@ -47,7 +47,7 @@ module.exports = function (grunt) {
                     browserifyOptions: {
                         standalone: 'MitchAllen.GridCore'
                     },
-                    transform: [['babelify', {presets: ['es2015']}]],
+                    transform: [['babelify', {presets: ['@babel/preset-env']}]],
                     plugin: [[ "browserify-derequire" ]]
                 },
                 files: {
