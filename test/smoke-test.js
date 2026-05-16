@@ -6,192 +6,164 @@
 
 "use strict";
 
-var request = require('supertest'),
-    should = require('should'),
-    modulePath = "../dist/grid-core.cjs.js"; // use CJS build for tests
+const { describe, it, before, after, beforeEach, afterEach } = require('node:test');
+const assert = require('node:assert');
+const modulePath = "../src/index";
 
 describe('module smoke test', function() {
 
     var _module = null;
 
-    before(function(done) {
+    before(function() {
         // Call before all tests
         delete require.cache[require.resolve(modulePath)];
         _module = require(modulePath);
-        done();
     });
 
-    after(function(done) {
+    after(function() {
         // Call after all tests
-        done();
     });
 
-    beforeEach(function(done) {
+    beforeEach(function() {
         // Call before each test
-        done();
     });
 
-    afterEach(function(done) {
+    afterEach(function() {
         // Call after eeach test
-        done();
     });
 
-    it('module should exist', function(done) {
-        should.exist(_module);
-        done();
+    it('module should exist', function() {
+        assert.ok(_module != null);
     });
 
-    it('create method with no spec should return valid object', function(done) {
+    it('create method with no spec should return valid object', function() {
         var obj = _module.create();
-        should.exist(obj);
-        done();
+        assert.ok(obj != null);
     });
 
-    it('create method with valid x and y parameters should return object', function(done) {
+    it('create method with valid x and y parameters should return object', function() {
         var obj = _module.create({ x: 5, y: 5 });
-        should.exist(obj);
-        done();
+        assert.ok(obj != null);
     });
 
-    it('rows should return number of rows', function(done) {
+    it('rows should return number of rows', function() {
         let rows = 5;
-        let sizeY = 6;
         var obj = _module.create({ rows: rows });
-        obj.rows.should.eql(rows);
-        done();
+        assert.deepStrictEqual(obj.rows, rows);
     });
 
-    it('set method with valid parameter should return true', function(done) {
+    it('set method with valid parameter should return true', function() {
         var rows = 5;
         var obj = _module.create({ rows: rows });
-        should.exist(obj);
+        assert.ok(obj != null);
         var result = obj.set(0,0,5);
-        result.should.eql(true);
-        done();
+        assert.deepStrictEqual(result, true);
     });
 
-    it('get method with valid parameter should return value', function(done) {
+    it('get method with valid parameter should return value', function() {
         var rows = 5;
         var obj = _module.create({ rows: rows });
-        should.exist(obj);
+        assert.ok(obj != null);
         let tX = 0;
         let tY = 0;
         let tValue = 5;
         var condition = obj.set(tX,tY,tValue);
-        condition.should.eql(true);
+        assert.deepStrictEqual(condition, true);
         var result = obj.get(tX,tY);
-        result.should.eql(tValue);
-        done();
+        assert.deepStrictEqual(result, tValue);
     });
 
-    it('get method with invalid x parameter should return null', function(done) {
+    it('get method with invalid x parameter should return null', function() {
         var rows = 5;
         var obj = _module.create({ rows: rows });
-        should.exist(obj);
+        assert.ok(obj != null);
         let tX = -1;
         let tY = 0;
-        let tValue = 5;
         var result = obj.get(tX,tY);
-        should.not.exist(result);
-        done();
+        assert.ok(result == null);
     });
 
-    it('get method with invalid y parameter should return null', function(done) {
+    it('get method with invalid y parameter should return null', function() {
         var rows = 5;
         var obj = _module.create({ rows: rows });
-        should.exist(obj);
+        assert.ok(obj != null);
         let tX = 0;
         let tY = -1;
-        let tValue = 5;
         var result = obj.get(tX,tY);
-        should.not.exist(result);
-        done();
+        assert.ok(result == null);
     });
 
-    it('isCell method with valid x and y parameters should return true', function(done) {
+    it('isCell method with valid x and y parameters should return true', function() {
         var rows = 5;
         var obj = _module.create({ rows: rows });
-        should.exist(obj);
+        assert.ok(obj != null);
         let tX = rows - 1;
         let tY = 0;
         let tValue = 20;
         var condition = obj.set(tX,tY,tValue);
         var result = obj.isCell(tX, tY);
-        result.should.eql(true);
-        done();
+        assert.deepStrictEqual(result, true);
     });
 
-    it('fill method with valid integer should fill grid with integer', function(done) {
-        let xSize = 5;
+    it('fill method with valid integer should fill grid with integer', function() {
         let rows = 10;
         var obj = _module.create({ rows: rows });
-        should.exist(obj);
+        assert.ok(obj != null);
         let tX = rows - 1;
         let tY = 0;
         let tValue = 20;
-        obj.set(tX,tY,tValue).should.eql(true);
+        assert.deepStrictEqual(obj.set(tX,tY,tValue), true);
         var fillValue = 999;
         var result = obj.fill(fillValue);
-        obj.get(tX,tY).should.eql(fillValue);
-        done();
+        assert.deepStrictEqual(obj.get(tX,tY), fillValue);
     });
 
-   it('cloneArray method should return a clone of the internal array', function(done) {
+   it('cloneArray method should return a clone of the internal array', function() {
         var rows = 5;
         var obj = _module.create({ rows: rows });
-        should.exist(obj);
+        assert.ok(obj != null);
         let tX = 0;
         let tY = 0;
         let tValue = 100;
         var result = obj.set(tX,tY,tValue);
-        result.should.eql(true);
+        assert.deepStrictEqual(result, true);
         var arr = obj.cloneArray();
-        arr[tX][tY].should.eql(tValue);
-        done();
+        assert.deepStrictEqual(arr[tX][tY], tValue);
     });
 
-    it('log method should not throw exception', function(done) {
+    it('log method should not throw exception', function() {
         var rows = 5;
         var grid = _module.create({ rows: rows });
-        should.exist(grid);
+        assert.ok(grid != null);
         grid.fill(10)
         grid.set(0,0,20);
         grid.set(rows - 1, 0,30);
         grid.set(rows - 1, 6,40);
         grid.log();
-        done();
     });
 
-    it('rowSize should return zero for new grid', function(done) {
+    it('rowSize should return zero for new grid', function() {
         let rows = 5;
-        let sizeY = 6;
         var obj = _module.create({ rows: rows });
-        obj.rowSize(rows).should.eql(0);
-        done();
+        assert.deepStrictEqual(obj.rowSize(rows), 0);
     });
 
-    it('rowSize should return row size', function(done) {
+    it('rowSize should return row size', function() {
         let rows = 5;
-        let sizeY = 6;
         var grid = _module.create({ rows: rows });
         grid.set(rows-1,0,20);
-        grid.rowSize(rows-1).should.eql(1);
-        done();
+        assert.deepStrictEqual(grid.rowSize(rows-1), 1);
     });
 
-    it('rowSize should return zero for negative row value', function(done) {
+    it('rowSize should return zero for negative row value', function() {
         let rows = 5;
-        let sizeY = 6;
         var grid = _module.create({ rows: rows });
-        grid.rowSize(-1).should.eql(0);
-        done();
+        assert.deepStrictEqual(grid.rowSize(-1), 0);
     });
 
-    it('rowSize should return zero for max row value', function(done) {
+    it('rowSize should return zero for max row value', function() {
         let rows = 5;
-        let sizeY = 6;
         var grid = _module.create({ rows: rows });
-        grid.rowSize(rows).should.eql(0);
-        done();
+        assert.deepStrictEqual(grid.rowSize(rows), 0);
     });
 });
