@@ -100,7 +100,7 @@ An example similar to this exists on the __examples__ folder out on the repo.
         <meta charset="utf-8">
         <title>Grid Core Example</title>
         <meta name="description" content="Grid Core Example">
-        <script src="https://cdn.jsdelivr.net/npm/@mitchallen/grid-core@0.1.10/dist/grid-core.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/mitchallen/grid-core@v0.1.10/dist/grid-core.min.js"></script>
         <script>
           var factory = window.MitchAllen.GridCore;
           console.log(factory);
