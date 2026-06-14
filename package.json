@@ -21,7 +21,7 @@
   "author": "Mitch Allen <npm@mitchallen.com> (http://mitchallen.com)",
   "license": "MIT",
   "devDependencies": {
-    "esbuild": "^0.25.5",
+    "esbuild": "^0.28.1",
     "mocha": "^11",
     "should": "^10.0.0",
     "supertest": "^6.3.1"
