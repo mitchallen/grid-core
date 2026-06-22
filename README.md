@@ -269,7 +269,7 @@ Add unit tests for any new or changed functionality. Lint and test your code.
 
 ## Version History
 
-#### Version 0.1.10
+#### Version 0.1.11
 
 * removed unused dev dependencies (mocha, should, supertest) and their overrides
 * switched tests to Node's built-in test runner (`node --test`)
