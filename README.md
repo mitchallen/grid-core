@@ -142,13 +142,13 @@ You can call __create__ multiple times to create multiple grids.
 
 Returns the number for rows in the grid.
 
-	grid.rows.should.eql(5);
+	assert.deepStrictEqual(grid.rows, 5);
 	
 ### rowsSize(rowId)
 
 Returns the number of items in the array in row __rowId__.
 
-	grid.rowSize(3).should.eql(10);
+	assert.deepStrictEqual(grid.rowSize(3), 10);
 	
 A row size is determined by the highest zero-based position inserted into that row.
 
@@ -214,16 +214,16 @@ Returns a clone of the internal array. This is not a reference. So changes to th
 	let arr = grid.cloneArray();
 	
 	// Verify value exists in clone
-	arr[tX][tY].should.eql(gridValue);
+	assert.deepStrictEqual(arr[tX][tY], gridValue);
 	
 	// Change value in clone
 	arr[tX][tY] = cloneValue;
 	
 	// Verify new value is set in clone
-	arr[tX][tY].should.eql(cloneValue);
+	assert.deepStrictEqual(arr[tX][tY], cloneValue);
 	
 	// Ensure that value does not alter original grid
-	grid.get(tX,tY).should.eql(gridValue);
+	assert.deepStrictEqual(grid.get(tX,tY), gridValue);
 	
 
 ### grid.log()
@@ -246,7 +246,8 @@ Example output:
 
 ## Testing
 
-To test, go to the root folder and type (sans __$__):
+Tests run on Node's built-in test runner (`node --test`) — no third-party
+test framework is required. To test, go to the root folder and type (sans __$__):
 
     $ npm test
    
@@ -267,6 +268,12 @@ Add unit tests for any new or changed functionality. Lint and test your code.
 * * *
 
 ## Version History
+
+#### Version 0.1.10
+
+* removed unused dev dependencies (mocha, should, supertest) and their overrides
+* switched tests to Node's built-in test runner (`node --test`)
+* resolves Dependabot alerts for form-data and js-yaml (npm audit: 0 vulnerabilities)
 
 #### Version 0.1.9
 

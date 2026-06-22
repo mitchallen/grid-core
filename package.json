@@ -6,11 +6,7 @@
   "scripts": {
     "start": "node dist/grid-core.js",
     "build": "node build.js",
-    "test": "npm run build && mocha --recursive --timeout 20000",
-    "test-coverage": "./node_modules/.bin/istanbul cover _mocha -- -R spec test/**/*",
-    "test-nodemon": "nodemon ./node_modules/.bin/mocha --timeout 5000",
-    "test-debug": "npm run build && mocha -g '@DEBUG' --recursive --timeout 20000",
-    "test-jenkins": "npm run build && --recursive --timeout 20000 -R xunit test/ > test-reports.xml",
+    "test": "npm run build && node --test 'test/**/*.js'",
     "//": "Usage:> [PORT=8002] npm run web-server",
     "web-server": "python -m SimpleHTTPServer $PORT || 8000"
   },
@@ -21,17 +17,6 @@
   "author": "Mitch Allen <npm@mitchallen.com> (http://mitchallen.com)",
   "license": "MIT",
   "devDependencies": {
-    "esbuild": "^0.28.1",
-    "mocha": "^11",
-    "should": "^10.0.0",
-    "supertest": "^6.3.1"
-  },
-  "overrides": {
-    "minimatch": "^3.1.4",
-    "lodash": "4.17.23",
-    "js-yaml": "3.14.2",
-    "diff": "^8.0.4",
-    "serialize-javascript": "^7.0.5",
     "esbuild": "^0.28.1"
   },
   "publishConfig": {
