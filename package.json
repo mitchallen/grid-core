@@ -8,6 +8,7 @@
     "start": "node dist/grid-core.js",
     "build": "node build.js",
     "test": "npm run build && node --test 'test/**/*.js'",
+    "coverage": "npm run build && node --test --experimental-test-coverage --test-coverage-exclude='test/**' --test-reporter=spec --test-reporter-destination=stdout --test-reporter=lcov --test-reporter-destination=lcov.info 'test/**/*.js'",
     "//": "Usage:> [PORT=8002] npm run web-server",
     "web-server": "python -m SimpleHTTPServer $PORT || 8000"
   },
