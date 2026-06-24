@@ -60,6 +60,13 @@ describe('module smoke test', function() {
         assert.deepStrictEqual(result, true);
     });
 
+    it('set method with negative parameters should return false', function() {
+        var obj = _module.create({ rows: 5 });
+        assert.ok(obj != null);
+        assert.deepStrictEqual(obj.set(-1, 0, 5), false);
+        assert.deepStrictEqual(obj.set(0, -1, 5), false);
+    });
+
     it('get method with valid parameter should return value', function() {
         var rows = 5;
         var obj = _module.create({ rows: rows });
