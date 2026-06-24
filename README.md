@@ -14,11 +14,11 @@ Grid core
     <img src="https://codecov.io/gh/mitchallen/grid-core/branch/master/graph/badge.svg" alt="Coverage Status">
   </a>
   
-  <a href="https://npmjs.org/package/@mitchallen/grid-core">
-    <img src="http://img.shields.io/npm/v/@mitchallen/grid-core.svg?style=flat-square" alt="Version">
+  <a href="https://github.com/mitchallen/grid-core/pkgs/npm/grid-core">
+    <img src="https://img.shields.io/github/v/tag/mitchallen/grid-core.svg?label=version" alt="Version">
   </a>
   
-  <a href="https://npmjs.org/package/@mitchallen/grid-core">
+  <a href="https://github.com/mitchallen/grid-core/blob/master/LICENSE">
     <img src="https://img.shields.io/github/license/mitchallen/grid-core.svg">
   </a>
 </p> 
