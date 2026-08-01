@@ -1,12 +1,11 @@
 {
   "name": "@mitchallen/grid-core",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "description": "Core grid module",
   "main": "dist/grid-core.cjs.js",
   "files": [
     "dist"
   ],
-  "browser": "dist/grid-core.js",
   "scripts": {
     "start": "node dist/grid-core.js",
     "build": "node build.js",
