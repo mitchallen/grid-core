@@ -1,6 +1,6 @@
 {
   "name": "@mitchallen/grid-core",
-  "version": "0.1.15",
+  "version": "0.1.16",
   "description": "Core grid module",
   "main": "dist/grid-core.cjs.js",
   "files": [

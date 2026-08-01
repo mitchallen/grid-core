@@ -1,2 +1,63 @@
-"use strict";module.exports.create=(u={})=>{let{rows:t=0}=u;t=Math.max(t,0);for(var i=[];i.push([])<t;);var a=Object.create({},{rows:{writeable:!1,value:t,enumerable:!0}});return Object.assign(a,{log:function(){console.log("size: %d: ",t),console.log(i)},rowSize:function(e){return e<0||e>=t?0:i[e].length},isCell:function(e,r){var l=this.rowSize(e);return e>=0&&e<t&&r>=0&&r<l},set:function(e,r,l){return e<0||r<0?!1:(i[e][r]=l,!0)},get:function(e,r){return this.isCell(e,r)?i[e][r]:null},fill:function(e){for(var r=0;r<t;r++)for(var l=this.rowSize(r),n=0;n<l;n++)i[r][n]=e},cloneArray:function(){for(var e=[];e.push([])<t;);for(var r=0;r<t;r++)for(var l=this.rowSize(r),n=0;n<l;n++)e[r][n]=i[r][n];return e}})};
+"use strict";
+
+// src/index.js
+module.exports.create = (spec = {}) => {
+  let { rows: _rows = 0 } = spec;
+  _rows = Math.max(_rows, 0);
+  var _array = [];
+  while (_array.push([]) < _rows) ;
+  var obj = Object.create({}, {
+    "rows": {
+      writeable: false,
+      value: _rows,
+      enumerable: true
+    }
+  });
+  return Object.assign(obj, {
+    log: function() {
+      console.log("size: %d: ", _rows);
+      console.log(_array);
+    },
+    rowSize: function(row) {
+      if (row < 0 || row >= _rows) {
+        return 0;
+      }
+      return _array[row].length;
+    },
+    isCell: function(a, b) {
+      var rs = this.rowSize(a);
+      return a >= 0 && a < _rows && b >= 0 && b < rs;
+    },
+    set: function(a, b, value) {
+      if (a < 0 || b < 0) return false;
+      _array[a][b] = value;
+      return true;
+    },
+    get: function(a, b) {
+      if (!this.isCell(a, b)) {
+        return null;
+      }
+      return _array[a][b];
+    },
+    fill: function(value) {
+      for (var row = 0; row < _rows; row++) {
+        var rs = this.rowSize(row);
+        for (var pos = 0; pos < rs; pos++) {
+          _array[row][pos] = value;
+        }
+      }
+    },
+    cloneArray: function() {
+      var _clone = [];
+      while (_clone.push([]) < _rows) ;
+      for (var row = 0; row < _rows; row++) {
+        var rs = this.rowSize(row);
+        for (var pos = 0; pos < rs; pos++) {
+          _clone[row][pos] = _array[row][pos];
+        }
+      }
+      return _clone;
+    }
+  });
+};
 //# sourceMappingURL=grid-core.cjs.js.map

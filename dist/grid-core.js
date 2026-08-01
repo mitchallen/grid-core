@@ -1,2 +1,79 @@
-"use strict";var MitchAllen_GridCore=(()=>{var f=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(n){throw t=0,n}};var c=f((v,a)=>{a.exports.create=(u={})=>{let{rows:t=0}=u;t=Math.max(t,0);for(var n=[];n.push([])<t;);var s=Object.create({},{rows:{writeable:!1,value:t,enumerable:!0}});return Object.assign(s,{log:function(){console.log("size: %d: ",t),console.log(n)},rowSize:function(e){return e<0||e>=t?0:n[e].length},isCell:function(e,r){var l=this.rowSize(e);return e>=0&&e<t&&r>=0&&r<l},set:function(e,r,l){return e<0||r<0?!1:(n[e][r]=l,!0)},get:function(e,r){return this.isCell(e,r)?n[e][r]:null},fill:function(e){for(var r=0;r<t;r++)for(var l=this.rowSize(r),i=0;i<l;i++)n[r][i]=e},cloneArray:function(){for(var e=[];e.push([])<t;);for(var r=0;r<t;r++)for(var l=this.rowSize(r),i=0;i<l;i++)e[r][i]=n[r][i];return e}})}});return c();})();
+"use strict";
+var MitchAllen = MitchAllen || {};
+MitchAllen.GridCore = (() => {
+  var __getOwnPropNames = Object.getOwnPropertyNames;
+  var __commonJS = (cb, mod) => function __require() {
+    try {
+      return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
+    } catch (e) {
+      throw mod = 0, e;
+    }
+  };
+
+  // src/index.js
+  var require_index = __commonJS({
+    "src/index.js"(exports, module) {
+      module.exports.create = (spec = {}) => {
+        let { rows: _rows = 0 } = spec;
+        _rows = Math.max(_rows, 0);
+        var _array = [];
+        while (_array.push([]) < _rows) ;
+        var obj = Object.create({}, {
+          "rows": {
+            writeable: false,
+            value: _rows,
+            enumerable: true
+          }
+        });
+        return Object.assign(obj, {
+          log: function() {
+            console.log("size: %d: ", _rows);
+            console.log(_array);
+          },
+          rowSize: function(row) {
+            if (row < 0 || row >= _rows) {
+              return 0;
+            }
+            return _array[row].length;
+          },
+          isCell: function(a, b) {
+            var rs = this.rowSize(a);
+            return a >= 0 && a < _rows && b >= 0 && b < rs;
+          },
+          set: function(a, b, value) {
+            if (a < 0 || b < 0) return false;
+            _array[a][b] = value;
+            return true;
+          },
+          get: function(a, b) {
+            if (!this.isCell(a, b)) {
+              return null;
+            }
+            return _array[a][b];
+          },
+          fill: function(value) {
+            for (var row = 0; row < _rows; row++) {
+              var rs = this.rowSize(row);
+              for (var pos = 0; pos < rs; pos++) {
+                _array[row][pos] = value;
+              }
+            }
+          },
+          cloneArray: function() {
+            var _clone = [];
+            while (_clone.push([]) < _rows) ;
+            for (var row = 0; row < _rows; row++) {
+              var rs = this.rowSize(row);
+              for (var pos = 0; pos < rs; pos++) {
+                _clone[row][pos] = _array[row][pos];
+              }
+            }
+            return _clone;
+          }
+        });
+      };
+    }
+  });
+  return require_index();
+})();
 //# sourceMappingURL=grid-core.js.map

@@ -1,30 +1,33 @@
 const esbuild = require('esbuild');
 
-// IIFE build for browser usage
-esbuild.build({
+const shared = {
   entryPoints: ['./src/index.js'],
   bundle: true,
-  outfile: './dist/grid-core.js',
-  format: 'iife', // changed from 'umd' to 'iife'
-  globalName: 'MitchAllen_GridCore',
-  minify: true,
   sourcemap: true,
   target: ['es2015'],
-}).catch((err) => {
-  console.error('IIFE build failed:', err);
-  process.exit(1);
-});
+};
 
-// CJS build for Node.js/tests
-esbuild.build({
-  entryPoints: ['./src/index.js'],
-  bundle: true,
-  outfile: './dist/grid-core.cjs.js',
-  format: 'cjs',
-  minify: true,
-  sourcemap: true,
-  target: ['es2015'],
-}).catch((err) => {
-  console.error('CJS build failed:', err);
+// Browser builds expose window.MitchAllen.GridCore -- the name the README
+// documents and the convention the rest of the family follows. An earlier
+// esbuild migration set this to the flat MitchAllen_GridCore, which matched
+// neither.
+const iife = {
+  ...shared,
+  format: 'iife',
+  globalName: 'MitchAllen.GridCore',
+};
+
+const builds = [
+  // Readable browser bundle.
+  { ...iife, outfile: './dist/grid-core.js', minify: false },
+  // Minified browser bundle. This is the file the README's jsDelivr link
+  // serves, so it is built here rather than left to drift.
+  { ...iife, outfile: './dist/grid-core.min.js', minify: true },
+  // CommonJS entry point; package.json "main" resolves here.
+  { ...shared, format: 'cjs', outfile: './dist/grid-core.cjs.js', minify: false },
+];
+
+Promise.all(builds.map((options) => esbuild.build(options))).catch((err) => {
+  console.error('Build failed:', err);
   process.exit(1);
 });
