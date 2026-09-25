@@ -1,3 +1,9 @@
+> **This repository is archived.** `@mitchallen/grid-core` is now developed and
+> published from the [maze-generator-v2](https://github.com/mitchallen/maze-generator-v2)
+> monorepo, in [`packages/grid-core`](https://github.com/mitchallen/maze-generator-v2/tree/main/packages/grid-core).
+> The package name and install instructions are unchanged; new versions come
+> from there.
+
 
 @mitchallen/grid-core
 ==
